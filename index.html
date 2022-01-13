@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
+    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
+    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
+    <title>Alltech Sell - App Download</title>
+    <link href="/css/metro.css" rel="stylesheet">
+    <link href="/css/metro-icons.css" rel="stylesheet">
+    <link href="/css/metro-schemes.css" rel="stylesheet">
+    <link href="/css/metro-colors.css" rel="stylesheet">
+    <link href="/css/metro-responsive.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/Icon-hdpi-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/Icon-xxhdpi-144x144.png">
+    <link rel="icon" sizes="192x192" href="/images/Icon-xxxhdpi-192x192.png">
+    <script src="/js/jquery-2.1.3.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>     
+    <!--<script src="//zumo.blob.core.windows.net/sdk/azure-mobile-apps-client.min.js"></script>  New client SDK does not use API Key, revert to old.-->
+    <!--<script src="/js/jquery.dataTables.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/metro/3.0.17/js/metro.js"></script>
+    <script type="text/javascript">
+        // Get host environment variables.
+        //var appStorageContainer = '';
+        // Set content storage URL.
+        //var appContentStorageURL = 'https://alltechmobile.blob.core.windows.net/'+appStorageContainer;
+    </script>    
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+        }
+
+        .page-content {
+            padding-top: 3.125rem;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        .table .input-control.checkbox {
+            line-height: 1;
+            min-height: 0;
+            height: auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+
+        .button.primary {
+          background: #c63;
+          color: #ffffff;
+          border-color: #c63;
+        }
+    </style>
+    
+
+    <script>
+        //var client = new WindowsAzure.MobileServiceClient('https://news.alltech-mobile.net/', 'bulVQqkbmfHGwlANDGHCnqoJRNlAEJ16'),
+        //    userTable = client.getTable('users'),
+        //    newsTable = client.getTable('news_message');
+
+        function pushMessage(t) {
+            var mes = 'Info|Implement independently';
+            $.Notify({
+                caption: mes.split("|")[0],
+                content: mes.split("|")[1],
+                type: t
+            });
+        }
+
+        //function getCount() {
+        //    var newsQuery = newsTable.orderByDescending("news_date").where({ complete: false });
+        //    newsQuery.read().then(function (items) {
+        //        $('#news-count').html(items.length);
+        //    });
+        //    var userQuery = userTable.orderByDescending("__createdAt").where({ complete: false });
+        //    userQuery.read().then(function (items) {
+        //        $('#user-count').html(items.length);
+        //    });
+        //}
+
+        $(function () {
+
+            // Read current data and rebuild UI.
+            // If you plan to generate complex UIs like this, consider using a JavaScript templating library.
+            //getCount();
+
+            $('.sidebar').on('click', 'li', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sidebar li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            })
+        })
+    </script>
+    
+    <script type="text/javascript">
+        //var iosapplink = 'itms-services://?action=download-manifest&amp;url='+appContentStorageURL+'/app/ios/manifest.plist';
+        //var androidapplink = appContentStorageURL+'/app/android/AlltechNews.apk';
+        $(document).ready(function() {
+            // Comment out the following 2 lines to use FTP server for app delivery.
+            //$('#iosapplink').attr('href', iosapplink);
+            //$('#androidapplink').attr('href', androidapplink);
+        }); 
+    </script>
+
+</head>
+<body class="bg-gray0">
+    <div class="app-bar fixed-top darcula" data-role="appbar">
+        <a class="app-bar-element branding" href="Default.aspx"><img src="../images/a.png" alt="badge" /> Alltech Sell App </a>
+        <span class="app-bar-divider"></span>
+    </div>
+    <div class="page-content">
+        <div class="flex-grid no-responsive-future" style="height: 100%;">
+            <div class="row" style="min-height: 100%">
+                <div class="cell size-x200" id="cell-sidebar" style="background-color:#71b1d1; height:100%; display:none;">
+                    <ul class="sidebar">
+
+                    </ul>
+                </div>
+                <div class="cell auto-size padding20 bg-white" id="cell-content">
+                    
+    <div style="text-align:center;">
+        <h1 class="text-light">Download App</h1>
+        <hr class="thin bg-grayLighter">
+    </div>
+    <div>
+        <div style="text-align:center;">
+            <img src="/images/AlltechSellApp01_iPhone7Plus.png" alt="appTitleScreen"/><br/>
+            <button id="dlAppiOS" class="button primary large-button" onclick="metroDialog.open('#dlgDliOS')"><span class="mif-apple mif-2x"> iPhone</span></button><br/>
+            <button id="dlAppAndroid" class="button primary large-button" onclick="metroDialog.open('#dlgDlAndroid')"><span class="mif-android mif-2x"> Android</span></button>
+        </div>
+    </div>
+    <div data-role="dialog" id="dlgDliOS" data-width="100%" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+        <div style="padding:10px;">
+            <div style="margin-top:20px;">
+                <h2>Installation for IOS</h2>
+            </div>
+            <div>
+                <p style="text-align:center"><strong>Instructions</strong><br></p>
+                <ul class="step-list">
+                    <li>Click the link below to initiate the install.</li>
+                    <li>Tap "Install" when prompted and <strong>exit the browser.</strong></li>
+                    <li>If you receive a "Trust" warning after installation, go to Settings--General--Device Management--Alltech,Inc. on your device and "Trust" this App.</li>
+                </ul>
+            </div>
+            <div style="text-align:center">
+                <button class="button success">
+                    <a id="iosapplink" href="itms-services://?action=download-manifest&amp;url=https://sell.alltech-mobile.net/downloads/ios/manifest.plist">TAP HERE TO INSTALL THEN<br><strong>CLOSE THE BROWSER WINDOW.</strong></a>
+                </button>
+            </div>
+            <div>
+                <p style="text-align:ceter"><strong>Link didn't work?</strong><br>
+                Make sure you're visiting this page on your device, not your computer.</p>  
+            </div>
+        </div>     
+    </div>
+    <div data-role="dialog" id="dlgDlAndroid" data-width="100%" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+        <div style="padding:10px;">
+            <div style="margin-top:20px;">
+                <h2>Installation for Android</h2>
+            </div>
+            <div>
+               <p><strong>Instructions</strong><br></p>
+                <ul class="step-list">
+            <li>Click the link below to initiate the Download.</li>
+            </div>
+            <div style="text-align:center">
+                <button class="button success">
+                    <a id="androidapplink" href="/downloads/android/AlltechSell.apk">TAP HERE TO DOWNLOAD</a>
+                </button>
+            </div>
+            <div>
+                <p><strong>Important Note!</strong><br>
+                Before installation, you will need to go change your settings to allow installation of apps from unknown sources.</p>
+                <p><strong>Link didn't work?</strong><br>
+                Make sure you're visiting this page on your device, not your computer.</p>
+            </div>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
